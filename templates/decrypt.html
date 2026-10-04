@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Decrypt | HYBRIDCRYPT</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="{{ url_for('home') }}"
+           class="logo">
+
+            <span class="logo-mark">
+                HC
+            </span>
+
+            <span>
+                HYBRIDCRYPT
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('encrypt') }}">
+                Encrypt
+            </a>
+
+            <a href="{{ url_for('decrypt') }}">
+                Decrypt
+            </a>
+
+            <a href="{{ url_for('how_it_works') }}">
+                How It Works
+            </a>
+
+            <a href="{{ url_for('about') }}">
+                About
+            </a>
+
+        </nav>
+
+
+        <a href="{{ url_for('encrypt') }}"
+           class="nav-button">
+
+            Start Encryption
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="encrypt-page">
+
+    <section class="encrypt-header">
+
+        <div class="section-label">
+            MESSAGE DECRYPTION
+        </div>
+
+        <h1>
+            Recover your
+            <span>original message.</span>
+        </h1>
+
+        <p>
+            Use the RSA private key to recover the AES
+            session key, then use AES to decrypt the message.
+        </p>
+
+    </section>
+
+
+    <section class="encrypt-container">
+
+        <div class="encrypt-card">
+
+            <h2>
+                Decryption
+            </h2>
+
+            <p class="encrypt-card-description">
+                The decryption process reverses the hybrid
+                encryption workflow.
+            </p>
+
+
+            <form method="POST"
+                  action="{{ url_for('decrypt') }}">
+
+
+                <label class="message-label">
+                    Encrypted Message
+                </label>
+
+                <textarea
+                    name="encrypted_message"
+                    class="message-input"
+                    placeholder="Paste the encrypted message here..."
+                    required></textarea>
+
+
+                <br><br>
+
+
+                <label class="message-label">
+                    RSA-Protected AES Key
+                </label>
+
+                <textarea
+                    name="encrypted_aes_key"
+                    class="message-input"
+                    placeholder="Paste the RSA-protected AES key here..."
+                    required></textarea>
+
+
+                <br><br>
+
+
+                <label class="message-label">
+                    Nonce / IV
+                </label>
+
+                <textarea
+                    name="nonce"
+                    class="message-input"
+                    placeholder="Paste the nonce here..."
+                    required></textarea>
+
+
+                <br><br>
+
+
+                <label class="message-label">
+                    RSA Private Key
+                </label>
+
+                <textarea
+                    name="private_key"
+                    class="message-input"
+                    placeholder="Paste your RSA private key here..."
+                    required></textarea>
+
+
+                <button
+                    type="submit"
+                    class="encrypt-button">
+
+                    🔓 Decrypt Message →
+
+                </button>
+
+            </form>
+
+
+            {% if result %}
+
+            <div class="success-message"
+                 style="margin-top:30px;">
+
+                ✓ Message decrypted successfully.
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>
+                    Original Message
+                </h3>
+
+                <textarea readonly>{{ result }}</textarea>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if error %}
+
+            <div class="warning-message">
+
+                ⚠️ {{ error }}
+
+            </div>
+
+            {% endif %}
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <a href="{{ url_for('home') }}"
+               class="logo footer-logo">
+
+                <span class="logo-mark">
+                    HC
+                </span>
+
+                <span>
+                    HYBRIDCRYPT
+                </span>
+
+            </a>
+
+            <p>
+                A Cryptography and Network Security
+                micro-project implementing hybrid
+                encryption using AES and RSA.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+
+                <h4>
+                    PROJECT
+                </h4>
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('encrypt') }}">
+                    Encrypt
+                </a>
+
+                <a href="{{ url_for('decrypt') }}">
+                    Decrypt
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    INFORMATION
+                </h4>
+
+                <a href="{{ url_for('how_it_works') }}">
+                    How It Works
+                </a>
+
+                <a href="{{ url_for('about') }}">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 HYBRIDCRYPT
+        </span>
+
+        <span>
+            Educational Cryptography Project
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

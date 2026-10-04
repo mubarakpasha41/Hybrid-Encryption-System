@@ -1,0 +1,898 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HYBRIDCRYPT | Secure Data Encryption</title>
+
+    <!-- Flask CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+
+        <a href="{{ url_for('home') }}" class="logo">
+
+            <span class="logo-mark">
+                HC
+            </span>
+
+            <span>
+                HYBRIDCRYPT
+            </span>
+
+        </a>
+
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('encrypt') }}">
+                Encrypt
+            </a>
+
+            <a href="{{ url_for('decrypt') }}">
+                Decrypt
+            </a>
+
+            <a href="{{ url_for('how_it_works') }}">
+                How It Works
+            </a>
+
+            <a href="{{ url_for('about') }}">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- MAIN ACTION -->
+
+        <a href="{{ url_for('encrypt') }}"
+           class="nav-button">
+
+            Start Encryption
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO SECTION
+     ===================================================== -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-container">
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                🔐 HYBRID ENCRYPTION SYSTEM
+            </div>
+
+
+            <h1>
+
+                Secure your data.
+
+                <span>
+                    Protect your keys.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                HYBRIDCRYPT combines the speed of AES
+                symmetric encryption with RSA public-key
+                cryptography to protect your data and
+                encryption keys.
+
+            </p>
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('encrypt') }}"
+                   class="primary-button">
+
+                    Start Encryption
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="{{ url_for('how_it_works') }}"
+                   class="secondary-button">
+
+                    How It Works
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-note">
+
+                <span>
+                    ✓
+                </span>
+
+                Secure message and file protection
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SECURITY VISUAL
+             ================================================= -->
+
+        <div class="hero-visual">
+
+            <div class="security-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="card-top">
+
+                    <span class="status-dot"></span>
+
+                    HYBRID SECURITY
+
+                </div>
+
+
+                <!-- AES + RSA -->
+
+                <div class="encryption-flow">
+
+
+                    <!-- AES -->
+
+                    <div class="crypto-box">
+
+                        <div class="crypto-icon">
+                            AES
+                        </div>
+
+                        <strong>
+                            Data Encryption
+                        </strong>
+
+                        <small>
+                            Fast symmetric encryption
+                        </small>
+
+                    </div>
+
+
+                    <!-- PLUS -->
+
+                    <div class="flow-arrow">
+                        +
+                    </div>
+
+
+                    <!-- RSA -->
+
+                    <div class="crypto-box rsa-box">
+
+                        <div class="crypto-icon">
+                            RSA
+                        </div>
+
+                        <strong>
+                            Key Protection
+                        </strong>
+
+                        <small>
+                            Public-key encryption
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div class="secure-result">
+
+                    <div class="lock-icon">
+                        🔒
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Protected Data
+                        </strong>
+
+                        <small>
+                            Encrypted data + protected session key
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TECHNOLOGY / STATS
+     ===================================================== -->
+
+<section class="stats-section">
+
+    <div class="stats-container">
+
+
+        <div class="stat">
+
+            <strong>
+                AES
+            </strong>
+
+            <span>
+                Data Encryption
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                RSA
+            </strong>
+
+            <span>
+                Key Protection
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                2-Layer
+            </strong>
+
+            <span>
+                Security Architecture
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                Python
+            </strong>
+
+            <span>
+                Implementation
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GETTING STARTED
+     ===================================================== -->
+
+<section class="section getting-started">
+
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            GETTING STARTED
+        </span>
+
+
+        <h2>
+            Protect your data in a few simple steps.
+        </h2>
+
+
+        <p>
+
+            HYBRIDCRYPT uses a hybrid cryptographic
+            architecture to efficiently encrypt data
+            and securely protect the encryption key.
+
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <!-- CARD 1 -->
+
+        <a href="{{ url_for('encrypt') }}"
+           class="feature-card">
+
+
+            <div class="feature-number">
+                01
+            </div>
+
+
+            <div class="feature-icon">
+                🔐
+            </div>
+
+
+            <h3>
+                Encrypt Data
+            </h3>
+
+
+            <p>
+
+                Enter a message or select a file
+                that you want to protect using
+                AES encryption.
+
+            </p>
+
+
+            <span class="card-link">
+                Start encrypting →
+            </span>
+
+
+        </a>
+
+
+        <!-- CARD 2 -->
+
+        <a href="{{ url_for('how_it_works') }}"
+           class="feature-card">
+
+
+            <div class="feature-number">
+                02
+            </div>
+
+
+            <div class="feature-icon">
+                🔑
+            </div>
+
+
+            <h3>
+                Protect the Key
+            </h3>
+
+
+            <p>
+
+                The AES session key is protected
+                using RSA public-key encryption.
+
+            </p>
+
+
+            <span class="card-link">
+                Explore the process →
+            </span>
+
+
+        </a>
+
+
+        <!-- CARD 3 -->
+
+        <a href="{{ url_for('decrypt') }}"
+           class="feature-card">
+
+
+            <div class="feature-number">
+                03
+            </div>
+
+
+            <div class="feature-icon">
+                🛡️
+            </div>
+
+
+            <h3>
+                Decrypt Securely
+            </h3>
+
+
+            <p>
+
+                Use the RSA private key to recover
+                the AES key and decrypt protected data.
+
+            </p>
+
+
+            <span class="card-link">
+                Decrypt data →
+            </span>
+
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SECURITY SECTION
+     ===================================================== -->
+
+<section class="security-section">
+
+    <div class="security-container">
+
+
+        <!-- TEXT -->
+
+        <div class="security-text">
+
+            <span class="section-label">
+                TWO LAYERS OF PROTECTION
+            </span>
+
+
+            <h2>
+
+                One system.
+
+                <br>
+
+                Two cryptographic strengths.
+
+            </h2>
+
+
+            <p>
+
+                AES is used to encrypt the actual
+                message or file, while RSA is used
+                to protect the AES session key.
+
+            </p>
+
+
+            <a href="{{ url_for('how_it_works') }}"
+               class="text-link">
+
+                Learn how the architecture works →
+
+            </a>
+
+        </div>
+
+
+        <!-- ALGORITHMS -->
+
+        <div class="algorithm-list">
+
+
+            <!-- AES -->
+
+            <div class="algorithm">
+
+
+                <div class="algorithm-badge">
+                    AES
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Advanced Encryption Standard
+                    </h3>
+
+
+                    <p>
+                        Used to encrypt the actual data efficiently.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RSA -->
+
+            <div class="algorithm">
+
+
+                <div class="algorithm-badge">
+                    RSA
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Rivest–Shamir–Adleman
+                    </h3>
+
+
+                    <p>
+                        Used to protect the AES session key.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WORKFLOW
+     ===================================================== -->
+
+<section class="section workflow-section">
+
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            ENCRYPTION WORKFLOW
+        </span>
+
+
+        <h2>
+            From plaintext to protected data.
+        </h2>
+
+
+        <p>
+
+            The hybrid architecture separates
+            data encryption from session-key protection.
+
+        </p>
+
+    </div>
+
+
+    <div class="workflow">
+
+
+        <!-- STEP 1 -->
+
+        <div class="workflow-step">
+
+            <span>
+                01
+            </span>
+
+
+            <h3>
+                Generate
+            </h3>
+
+
+            <p>
+
+                Generate an AES session key
+                and RSA key pair.
+
+            </p>
+
+        </div>
+
+
+        <div class="workflow-line"></div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="workflow-step">
+
+            <span>
+                02
+            </span>
+
+
+            <h3>
+                Encrypt
+            </h3>
+
+
+            <p>
+
+                Encrypt the message or file
+                using AES.
+
+            </p>
+
+        </div>
+
+
+        <div class="workflow-line"></div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="workflow-step">
+
+            <span>
+                03
+            </span>
+
+
+            <h3>
+                Protect
+            </h3>
+
+
+            <p>
+
+                Encrypt the AES session key
+                using the RSA public key.
+
+            </p>
+
+        </div>
+
+
+        <div class="workflow-line"></div>
+
+
+        <!-- STEP 4 -->
+
+        <div class="workflow-step">
+
+            <span>
+                04
+            </span>
+
+
+            <h3>
+                Recover
+            </h3>
+
+
+            <p>
+
+                Recover the AES key and
+                decrypt the protected data.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALL TO ACTION
+     ===================================================== -->
+
+<section class="cta-section">
+
+
+    <div class="cta-container">
+
+
+        <div>
+
+            <span class="section-label">
+                READY TO BEGIN?
+            </span>
+
+
+            <h2>
+                Start protecting your data.
+            </h2>
+
+
+            <p>
+                Experience the HYBRIDCRYPT encryption workflow.
+            </p>
+
+        </div>
+
+
+        <a href="{{ url_for('encrypt') }}"
+           class="primary-button light-button">
+
+            Start Encryption →
+
+        </a>
+
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+            <a href="{{ url_for('home') }}"
+               class="logo footer-logo">
+
+
+                <span class="logo-mark">
+                    HC
+                </span>
+
+
+                <span>
+                    HYBRIDCRYPT
+                </span>
+
+
+            </a>
+
+
+            <p>
+
+                A Cryptography and Network Security
+                micro-project implementing hybrid
+                encryption using AES and RSA.
+
+            </p>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <div class="footer-links">
+
+
+            <div>
+
+                <h4>
+                    PROJECT
+                </h4>
+
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+
+                <a href="{{ url_for('encrypt') }}">
+                    Encrypt
+                </a>
+
+
+                <a href="{{ url_for('decrypt') }}">
+                    Decrypt
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    INFORMATION
+                </h4>
+
+
+                <a href="{{ url_for('how_it_works') }}">
+                    How It Works
+                </a>
+
+
+                <a href="{{ url_for('about') }}">
+                    About
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+
+        <span>
+            © 2026 HYBRIDCRYPT
+        </span>
+
+
+        <span>
+            Educational Cryptography Project
+        </span>
+
+
+    </div>
+
+
+</footer>
+
+
+</body>
+</html>
+```
